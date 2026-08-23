@@ -1,0 +1,412 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dynasty Print & Wear | Premium Custom Apparel</title>
+    <!-- Tailwind CSS CDN -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <!-- Google Fonts for Luxury Aesthetic -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Cinzel+Decorative:wght@700;900&family=Montserrat:wght@300;400;600;800;900&display=swap" rel="stylesheet">
+    <style>
+  .text-gradient-gold {
+    background: linear-gradient(135deg, #FFE500 0%, #FFF599 50%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+  }
+  .glow-blue {
+    box-shadow: 0 0 25px rgba(37, 82, 208, 0.35);
+  }
+  .glow-yellow {
+    box-shadow: 0 0 25px rgba(255, 229, 0, 0.3);
+  }
+  img {
+    mix-blend-mode: screen;
+  }
+</style>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        brandDark: '#000000',
+                        brandBlue: '#2552D0',
+                        brandYellow: '#FFE500',
+                        brandCard: '#090D16'
+                    },
+                    fontFamily: {
+                        luxury: ['Cinzel Decorative', 'serif'],
+                        sans: ['Montserrat', 'sans-serif']
+                    }
+                }
+            }
+        }
+    </script>
+    <!-- Font Awesome Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        .text-gradient-gold {
+            background: linear-gradient(135deg, #FFE500 0%, #FFF599 50%, #D4B200 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+        .glow-blue {
+            box-shadow: 0 0 25px rgba(37, 82, 208, 0.35);
+        }
+        .glow-yellow {
+            box-shadow: 0 0 25px rgba(255, 229, 0, 0.3);
+        }
+    </style>
+</head>
+<body class="bg-black text-white font-sans antialiased tracking-wide selection:bg-brandYellow selection:text-black overflow-x-hidden">
+
+    <!-- Navigation -->
+    <nav class="sticky top-0 z-50 bg-black/95 backdrop-blur-md border-b border-brandBlue/30">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex justify-between items-center h-24">
+                
+                <!-- Logo Image -->
+                <a href="#" class="flex items-center group py-2">
+                    <img src="logo.jpg" alt="Dynasty Print and Wear Logo" class="h-16 sm:h-20 w-auto object-contain transition-transform duration-300 group-hover:scale-105">
+                </a>
+
+                <!-- Desktop Links -->
+                <div class="hidden md:flex items-center space-x-8 uppercase text-xs font-semibold tracking-widest text-gray-300">
+                    <a href="#about" class="hover:text-brandYellow transition duration-300">About Us</a>
+                    <a href="#custom-order" class="hover:text-brandYellow transition duration-300">Custom Printing</a>
+                    <a href="#showcase" class="hover:text-brandYellow transition duration-300">Our Work</a>
+                    <a href="#shop" class="hover:text-brandYellow transition duration-300">Shop Store</a>
+                </div>
+
+                <!-- Cart Icon -->
+                <button onclick="toggleCart()" class="relative bg-brandBlue/20 border border-brandBlue text-white p-3 rounded-lg hover:bg-brandYellow hover:text-black hover:border-brandYellow transition duration-300">
+                    <i class="fa-solid font-bold fa-cart-shopping text-lg"></i>
+                    <span id="cart-count" class="absolute -top-2 -right-2 bg-brandYellow text-black font-black text-xs px-2 py-0.5 rounded-full border border-black shadow">0</span>
+                </button>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section class="relative bg-black py-28 px-4 text-center border-b border-brandBlue/20 overflow-hidden">
+        <div class="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[500px] h-[500px] bg-brandBlue/20 blur-[120px] rounded-full pointer-events-none"></div>
+
+        <div class="relative max-w-4xl mx-auto space-y-8 z-10">
+            <div class="inline-block bg-brandCard border border-brandYellow/40 text-brandYellow px-6 py-1.5 text-xs font-semibold uppercase tracking-[0.2em] rounded-full shadow-lg">
+                Crafted For Royalty
+            </div>
+            
+            <h1 class="text-4xl sm:text-6xl lg:text-7xl font-luxury font-black text-white leading-tight uppercase">
+                Wear Your <span class="text-gradient-gold block sm:inline">Dynasty</span>
+            </h1>
+            
+            <p class="text-gray-300 font-light text-base sm:text-lg max-w-2xl mx-auto tracking-wide leading-relaxed">
+                Premium custom print craftsmanship met with high-grade streetwear standards. Bold prints, ultra-heavy fabrics, and uncompromised quality.
+            </p>
+            
+            <div class="flex flex-col sm:flex-row gap-5 justify-center pt-4">
+                <a href="#custom-order" class="bg-brandYellow text-black font-extrabold uppercase px-9 py-4 rounded-lg hover:bg-white transition duration-300 text-sm tracking-wider glow-yellow">
+                    Order Custom Print
+                </a>
+                <a href="#shop" class="bg-brandCard border border-brandBlue text-white font-extrabold uppercase px-9 py-4 rounded-lg hover:bg-brandBlue transition duration-300 text-sm tracking-wider glow-blue">
+                    Explore Collection
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- About Us Section -->
+    <section id="about" class="py-24 max-w-6xl mx-auto px-4 border-b border-brandBlue/20">
+        <div class="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
+            <div class="space-y-6">
+                <div class="inline-block border-l-2 border-brandYellow pl-4 text-brandYellow text-xs font-extrabold uppercase tracking-widest">
+                    The Dynasty Standard
+                </div>
+                <h2 class="text-3xl sm:text-5xl font-luxury font-black uppercase text-white leading-tight">
+                    Built On Precision, <span class="text-brandYellow block">Crowns & Quality</span>
+                </h2>
+                <p class="text-gray-300 font-light text-sm sm:text-base leading-relaxed">
+                    At <strong class="text-white font-semibold">Dynasty Print & Wear</strong>, apparel is treated as a statement of authority. What began as a dedicated print shop built on craftsmanship has evolved into a premier destination for streetwear collections and high-grade custom prints.
+                </p>
+                <p class="text-gray-400 font-light text-sm leading-relaxed">
+                    Utilizing heavy-weight textiles, durable screen inks, and precise digital print technologies, every piece created carries a legacy of quality. Whether supplying custom apparel for brands, events, and athletics, or engineering ready-to-wear drops, our mission remains absolute: delivering royalty-grade wear designed to last.
+                </p>
+                
+                <div class="grid grid-cols-3 gap-4 pt-4 border-t border-gray-900 text-center">
+                    <div>
+                        <span class="block text-2xl font-luxury font-black text-brandYellow">100%</span>
+                        <span class="text-[10px] uppercase text-gray-400 tracking-wider">Heavyweight Quality</span>
+                    </div>
+                    <div>
+                        <span class="block text-2xl font-luxury font-black text-brandBlue">HD</span>
+                        <span class="text-[10px] uppercase text-gray-400 tracking-wider">Precision Prints</span>
+                    </div>
+                    <div>
+                        <span class="block text-2xl font-luxury font-black text-white">CUSTOM</span>
+                        <span class="text-[10px] uppercase text-gray-400 tracking-wider">Brand Orders</span>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Brand Highlight Card -->
+            <div class="bg-brandCard p-8 sm:p-12 rounded-2xl border border-brandBlue/40 glow-blue relative overflow-hidden flex flex-col justify-center items-center text-center">
+                <img src="logo.jpg" alt="Dynasty Emblem" class="h-32 w-auto mb-6 object-contain">
+                <h3 class="text-xl font-luxury font-black uppercase text-brandYellow mb-2">Uncompromising Standard</h3>
+                <p class="text-gray-300 text-xs leading-relaxed max-w-sm">
+                    "From logo concept to final print, we engineer apparel that commands presence."
+                </p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Custom Order Section -->
+    <section id="custom-order" class="py-24 max-w-5xl mx-auto px-4 border-b border-brandBlue/20">
+        <div class="bg-brandCard p-8 sm:p-12 rounded-2xl border border-brandBlue/40 glow-blue">
+            <div class="text-center mb-10">
+                <h2 class="text-3xl sm:text-4xl font-luxury font-black text-white uppercase tracking-wider mb-2">Custom <span class="text-brandYellow">Order</span></h2>
+                <p class="text-gray-400 text-xs sm:text-sm tracking-widest uppercase">Send in your design details to request a custom print quote.</p>
+            </div>
+
+            <form id="orderForm" onsubmit="handleCustomOrder(event)" class="space-y-6">
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+                    <div>
+                        <label class="block text-xs uppercase font-bold text-gray-300 mb-2">Apparel Type</label>
+                        <select id="apparelType" class="w-full bg-black border border-gray-800 rounded-lg p-3.5 text-white focus:border-brandYellow focus:outline-none transition">
+                            <option value="T-Shirt">T-Shirt ($15 base)</option>
+                            <option value="Hoodie">Hoodie ($35 base)</option>
+                            <option value="Sweatshirt">Sweatshirt ($28 base)</option>
+                            <option value="Cap">Custom Cap ($12 base)</option>
+                        </select>
+                    </div>
+                    <div>
+                        <label class="block text-xs uppercase font-bold text-gray-300 mb-2">Quantity</label>
+                        <input type="number" id="quantity" min="1" value="10" class="w-full bg-black border border-gray-800 rounded-lg p-3.5 text-white focus:border-brandYellow focus:outline-none transition" required>
+                    </div>
+                    <div>
+                        <label class="block text-xs uppercase font-bold text-gray-300 mb-2">Print Placement</label>
+                        <select id="printLocation" class="w-full bg-black border border-gray-800 rounded-lg p-3.5 text-white focus:border-brandYellow focus:outline-none transition">
+                            <option value="Front Only">Front Chest Only</option>
+                            <option value="Back Only">Back Only</option>
+                            <option value="Front & Back">Front & Back (+$5/unit)</option>
+                        </select>
+                    </div>
+                    <div>
+                        <label class="block text-xs uppercase font-bold text-gray-300 mb-2">Upload Logo / Artwork</label>
+                        <input type="file" id="logoUpload" class="w-full bg-black border border-gray-800 rounded-lg p-3 text-gray-400 file:mr-4 file:py-1.5 file:px-4 file:rounded-md file:border-0 file:text-xs file:font-bold file:bg-brandBlue file:text-white hover:file:bg-brandYellow hover:file:text-black transition">
+                    </div>
+                </div>
+
+                <div>
+                    <label class="block text-xs uppercase font-bold text-gray-300 mb-2">Contact Email</label>
+                    <input type="email" placeholder="your@email.com" class="w-full bg-black border border-gray-800 rounded-lg p-3.5 text-white focus:border-brandYellow focus:outline-none transition" required>
+                </div>
+
+                <button type="submit" class="w-full bg-brandYellow text-black font-extrabold uppercase py-4 rounded-lg hover:bg-white transition duration-300 text-sm tracking-widest glow-yellow">
+                    Submit Print Request
+                </button>
+            </form>
+        </div>
+    </section>
+
+    <!-- Company Showcase / Work Gallery Section -->
+    <section id="showcase" class="py-24 max-w-7xl mx-auto px-4 border-b border-brandBlue/20">
+        <div class="text-center mb-16">
+            <h2 class="text-3xl sm:text-5xl font-luxury font-black uppercase text-white tracking-wider mb-2">Recent <span class="text-brandYellow">Work Showcase</span></h2>
+            <p class="text-gray-400 text-xs sm:text-sm tracking-widest uppercase">Explore some of our recent custom print projects and client productions.</p>
+        </div>
+
+        <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8">
+            <!-- Showcase Item 1 -->
+            <div class="bg-brandCard rounded-2xl overflow-hidden border border-gray-800 hover:border-brandYellow transition duration-500 group">
+                <div class="h-72 overflow-hidden relative">
+                    <img src="https://images.unsplash.com/photo-1503342217505-b0a15ec3261c?w=600&q=80" alt="High-Density Screen Print" class="w-full h-full object-cover group-hover:scale-110 transition duration-700 ease-out">
+                    <div class="absolute inset-0 bg-black/40 group-hover:bg-black/20 transition"></div>
+                </div>
+                <div class="p-6">
+                    <span class="text-brandYellow text-[10px] font-extrabold uppercase tracking-widest block mb-1">Custom Screen Print</span>
+                    <h3 class="font-luxury font-black text-lg text-white uppercase">Heavy Metal Tour Apparel</h3>
+                    <p class="text-gray-400 text-xs mt-2 font-light">Multi-color high-density ink print on 300GSM heavyweight cotton tees.</p>
+                </div>
+            </div>
+
+            <!-- Showcase Item 2 -->
+            <div class="bg-brandCard rounded-2xl overflow-hidden border border-gray-800 hover:border-brandYellow transition duration-500 group">
+                <div class="h-72 overflow-hidden relative">
+                    <img src="https://images.unsplash.com/photo-1556905055-8f358a7a47b2?w=600&q=80" alt="3D Puff Embroidery" class="w-full h-full object-cover group-hover:scale-110 transition duration-700 ease-out">
+                    <div class="absolute inset-0 bg-black/40 group-hover:bg-black/20 transition"></div>
+                </div>
+                <div class="p-6">
+                    <span class="text-brandYellow text-[10px] font-extrabold uppercase tracking-widest block mb-1">Embroidery & Patchwork</span>
+                    <h3 class="font-luxury font-black text-lg text-white uppercase">Gold Crest Puff Hoodies</h3>
+                    <p class="text-gray-400 text-xs mt-2 font-light">Raised 3D puff embroidery on fleece hoodies for executive brand merch.</p>
+                </div>
+            </div>
+
+            <!-- Showcase Item 3 -->
+            <div class="bg-brandCard rounded-2xl overflow-hidden border border-gray-800 hover:border-brandYellow transition duration-500 group">
+                <div class="h-72 overflow-hidden relative">
+                    <img src="https://images.unsplash.com/photo-1588850561407-ed78c282e89b?w=600&q=80" alt="Custom Headwear" class="w-full h-full object-cover group-hover:scale-110 transition duration-700 ease-out">
+                    <div class="absolute inset-0 bg-black/40 group-hover:bg-black/20 transition"></div>
+                </div>
+                <div class="p-6">
+                    <span class="text-brandYellow text-[10px] font-extrabold uppercase tracking-widest block mb-1">Headwear Line</span>
+                    <h3 class="font-luxury font-black text-lg text-white uppercase">Dynasty Crown Strapbacks</h3>
+                    <p class="text-gray-400 text-xs mt-2 font-light">Precision woven patches stitched onto vintage-wash strapback caps.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Product E-Commerce Section -->
+    <section id="shop" class="py-24 bg-black">
+        <div class="max-w-7xl mx-auto px-4">
+            <div class="text-center mb-16">
+                <h2 class="text-3xl sm:text-5xl font-luxury font-black uppercase text-white tracking-wider mb-2">The <span class="text-gradient-gold">Collection</span></h2>
+                <p class="text-brandBlue font-semibold tracking-widest text-xs uppercase">Official Dynasty Print & Wear Merchandise</p>
+            </div>
+
+            <!-- Product Grid -->
+            <div id="product-grid" class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-10">
+                <!-- Products dynamically inserted via JS -->
+            </div>
+        </div>
+    </section>
+
+    <!-- Shopping Cart Modal -->
+    <div id="cart-modal" class="fixed inset-0 bg-black/90 backdrop-blur-md z-50 hidden flex justify-end">
+        <div class="w-full max-w-md bg-brandCard h-full p-8 flex flex-col justify-between border-l border-brandBlue/40">
+            <div>
+                <div class="flex justify-between items-center pb-6 border-b border-gray-800">
+                    <h3 class="text-2xl font-luxury font-black uppercase text-brandYellow tracking-wider">Cart</h3>
+                    <button onclick="toggleCart()" class="text-gray-400 hover:text-white text-xl"><i class="fa-solid fa-xmark"></i></button>
+                </div>
+                <div id="cart-items" class="py-6 space-y-4 max-h-[60vh] overflow-y-auto">
+                    <!-- Dynamic Cart Content -->
+                </div>
+            </div>
+            <div class="border-t border-gray-800 pt-6">
+                <div class="flex justify-between font-bold text-lg mb-6">
+                    <span class="uppercase tracking-wider">Total</span>
+                    <span id="cart-total" class="text-brandYellow font-extrabold">$0.00</span>
+                </div>
+                <button onclick="alert('Checkout integration ready!')" class="w-full bg-brandYellow text-black font-extrabold uppercase py-4 rounded-lg hover:bg-white transition duration-300 text-sm tracking-widest glow-yellow">
+                    Proceed to Checkout
+                </button>
+            </div>
+        </div>
+    </div>
+
+    <!-- JavaScript Logic -->
+    <script>
+        // Initial Products
+        let products = [
+            {
+                id: 1,
+                name: "Dynasty Crown Heavyweight Tee",
+                price: 34.99,
+                image: "https://images.unsplash.com/photo-1521572267360-ee0c2909d518?w=500&q=80"
+            },
+            {
+                id: 2,
+                name: "Royalty Fleece Hoodie",
+                price: 69.99,
+                image: "https://images.unsplash.com/photo-1556905055-8f358a7a47b2?w=500&q=80"
+            },
+            {
+                id: 3,
+                name: "Dynasty Gold Strapback Cap",
+                price: 29.99,
+                image: "https://images.unsplash.com/photo-1588850561407-ed78c282e89b?w=500&q=80"
+            }
+        ];
+
+        let cart = [];
+
+        // Render products with separate Buy Now and Add To Cart buttons
+        function renderProducts() {
+            const grid = document.getElementById('product-grid');
+            grid.innerHTML = products.map(product => `
+                <div class="bg-brandCard rounded-2xl overflow-hidden border border-gray-800 hover:border-brandYellow transition duration-500 group flex flex-col justify-between shadow-xl">
+                    <div class="h-80 overflow-hidden relative">
+                        <img src="${product.image}" alt="${product.name}" class="w-full h-full object-cover group-hover:scale-110 transition duration-700 ease-out">
+                        <div class="absolute inset-0 bg-gradient-to-t from-brandCard via-transparent to-transparent opacity-80"></div>
+                    </div>
+                    <div class="p-6 flex flex-col flex-grow justify-between">
+                        <div>
+                            <h3 class="font-luxury font-black uppercase text-lg text-white mb-2 tracking-wide">${product.name}</h3>
+                            <p class="text-brandYellow font-extrabold text-2xl mb-6">$${product.price.toFixed(2)}</p>
+                        </div>
+                        
+                        <!-- Separated Action Buttons -->
+                        <div class="flex flex-col gap-2.5">
+                            <!-- Buy Now Button (Adds & Opens Cart Modal Immediately) -->
+                            <button onclick="buyNow(${product.id})" class="w-full bg-brandYellow text-black font-extrabold uppercase py-3 rounded-lg hover:bg-white transition duration-300 text-xs tracking-widest shadow-md flex items-center justify-center gap-2">
+                                <i class="fa-solid fa-bolt text-xs"></i> Buy Now
+                            </button>
+
+                            <!-- Add To Cart Button (Adds silently in background) -->
+                            <button onclick="addToCart(${product.id})" class="w-full bg-black border border-brandBlue text-white font-extrabold uppercase py-3 rounded-lg hover:bg-brandBlue transition duration-300 text-xs tracking-widest flex items-center justify-center gap-2">
+                                <i class="fa-solid fa-cart-shopping text-xs"></i> Add To Cart
+                            </button>
+                        </div>
+                    </div>
+                </div>
+            `).join('');
+        }
+
+        // Cart & Buy Actions
+        function addToCart(productId) {
+            const product = products.find(p => p.id === productId);
+            cart.push(product);
+            updateCartUI();
+        }
+
+        function buyNow(productId) {
+            addToCart(productId);
+            document.getElementById('cart-modal').classList.remove('hidden');
+        }
+
+        function updateCartUI() {
+            document.getElementById('cart-count').innerText = cart.length;
+            const container = document.getElementById('cart-items');
+            
+            if (cart.length === 0) {
+                container.innerHTML = `<p class="text-gray-500 text-xs uppercase tracking-wider">Your cart is empty.</p>`;
+            } else {
+                container.innerHTML = cart.map((item, index) => `
+                    <div class="flex justify-between items-center bg-black p-4 rounded-lg border border-gray-800">
+                        <div>
+                            <h4 class="font-extrabold text-white text-xs uppercase tracking-wider mb-1">${item.name}</h4>
+                            <span class="text-brandYellow font-bold text-xs">$${item.price.toFixed(2)}</span>
+                        </div>
+                        <button onclick="removeFromCart(${index})" class="text-red-500 hover:text-red-400 text-xs uppercase font-bold tracking-wider">Remove</button>
+                    </div>
+                `).join('');
+            }
+
+            const total = cart.reduce((sum, item) => sum + item.price, 0);
+            document.getElementById('cart-total').innerText = `$${total.toFixed(2)}`;
+        }
+
+        function removeFromCart(index) {
+            cart.splice(index, 1);
+            updateCartUI();
+        }
+
+        function toggleCart() {
+            document.getElementById('cart-modal').classList.toggle('hidden');
+        }
+
+        function handleCustomOrder(e) {
+            e.preventDefault();
+            alert('Custom print quote submitted successfully! Our team will contact you shortly.');
+            document.getElementById('orderForm').reset();
+        }
+
+        // Initialize Store
+        renderProducts();
+    </script>
+</body>
+</html>
