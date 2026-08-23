@@ -190,46 +190,41 @@
                 <p class="text-gray-400 text-xs sm:text-sm tracking-widest uppercase">Send in your design details to request a custom print quote.</p>
             </div>
 
-            <form id="orderForm" onsubmit="handleCustomOrder(event)" class="space-y-6">
-                <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
-                    <div>
-                        <label class="block text-xs uppercase font-bold text-gray-300 mb-2">Apparel Type</label>
-                        <select id="apparelType" class="w-full bg-black border border-gray-800 rounded-lg p-3.5 text-white focus:border-brandYellow focus:outline-none transition">
-                            <option value="T-Shirt">T-Shirt ($15 base)</option>
-                            <option value="Hoodie">Hoodie ($35 base)</option>
-                            <option value="Sweatshirt">Sweatshirt ($28 base)</option>
-                            <option value="Cap">Custom Cap ($12 base)</option>
-                        </select>
-                    </div>
-                    <div>
-                        <label class="block text-xs uppercase font-bold text-gray-300 mb-2">Quantity</label>
-                        <input type="number" id="quantity" min="1" value="10" class="w-full bg-black border border-gray-800 rounded-lg p-3.5 text-white focus:border-brandYellow focus:outline-none transition" required>
-                    </div>
-                    <div>
-                        <label class="block text-xs uppercase font-bold text-gray-300 mb-2">Print Placement</label>
-                        <select id="printLocation" class="w-full bg-black border border-gray-800 rounded-lg p-3.5 text-white focus:border-brandYellow focus:outline-none transition">
-                            <option value="Front Only">Front Chest Only</option>
-                            <option value="Back Only">Back Only</option>
-                            <option value="Front & Back">Front & Back (+$5/unit)</option>
-                        </select>
-                    </div>
-                    <div>
-                        <label class="block text-xs uppercase font-bold text-gray-300 mb-2">Upload Logo / Artwork</label>
-                        <input type="file" id="logoUpload" class="w-full bg-black border border-gray-800 rounded-lg p-3 text-gray-400 file:mr-4 file:py-1.5 file:px-4 file:rounded-md file:border-0 file:text-xs file:font-bold file:bg-brandBlue file:text-white hover:file:bg-brandYellow hover:file:text-black transition">
-                    </div>
-                </div>
+           <form action="https://formspree.io/f/maewzvyv" method="POST" enctype="multipart/form-data">
+  
+  <!-- Apparel Type -->
+  <label for="apparel">Apparel Type</label>
+  <select id="apparel" name="apparel_type" required>
+    <option value="T-Shirt">T-Shirt ($15 base)</option>
+    <option value="Hoodie">Hoodie ($35 base)</option>
+    <option value="Sweatshirt">Sweatshirt ($28 base)</option>
+    <option value="Custom Cap">Custom Cap ($12 base)</option>
+  </select>
 
-                <div>
-                    <label class="block text-xs uppercase font-bold text-gray-300 mb-2">Contact Email</label>
-                    <input type="email" placeholder="your@email.com" class="w-full bg-black border border-gray-800 rounded-lg p-3.5 text-white focus:border-brandYellow focus:outline-none transition" required>
-                </div>
+  <!-- Quantity -->
+  <label for="quantity">Quantity</label>
+  <input type="number" id="quantity" name="quantity" min="1" value="10" required>
 
-                <button type="submit" class="w-full bg-brandYellow text-black font-extrabold uppercase py-4 rounded-lg hover:bg-white transition duration-300 text-sm tracking-widest glow-yellow">
-                    Submit Print Request
-                </button>
-            </form>
-        </div>
-    </section>
+  <!-- Print Placement -->
+  <label for="placement">Print Placement</label>
+  <select id="placement" name="print_placement" required>
+    <option value="Front Chest Only">Front Chest Only</option>
+    <option value="Back Only">Back Only</option>
+    <option value="Front & Back">Front & Back (+$5/unit)</option>
+  </select>
+
+  <!-- Logo / Artwork Upload -->
+  <label for="artwork">Upload Logo / Artwork</label>
+  <input type="file" id="artwork" name="artwork_file" accept="image/*">
+
+  <!-- Contact Email -->
+  <label for="email">Contact Email</label>
+  <input type="email" id="email" name="email" placeholder="your@email.com" required>
+
+  <!-- Submit Button -->
+  <button type="submit">SUBMIT PRINT REQUEST</button>
+
+</form>
 
     <!-- Company Showcase / Work Gallery Section -->
     <section id="showcase" class="py-24 max-w-7xl mx-auto px-4 border-b border-brandBlue/20">
