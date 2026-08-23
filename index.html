@@ -63,22 +63,52 @@
 <body class="bg-black text-white font-sans antialiased tracking-wide selection:bg-brandYellow selection:text-black overflow-x-hidden">
 
     <!-- Navigation -->
-    <nav class="sticky top-0 z-50 bg-black/95 backdrop-blur-md border-b border-brandBlue/30">
-        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div class="flex justify-between items-center h-24">
-                
-                <!-- Logo Image -->
-                <a href="#" class="flex items-center group py-2">
-                    <img src="logo.jpg" alt="Dynasty Print and Wear Logo" class="h-16 sm:h-20 w-auto object-contain transition-transform duration-300 group-hover:scale-105">
-                </a>
+    <nav class="sticky top-0 z-50 bg-black/95 backdrop-blur-md border-b border-gray-800">
+  <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+    <div class="flex justify-between items-center h-24">
+      
+      <!-- Logo -->
+      <a href="#" class="flex items-center">
+        <img src="logo.png" alt="Dynasty Print and Wear Logo" class="h-12 w-auto">
+      </a>
 
-                <!-- Desktop Links -->
-                <div class="hidden md:flex items-center space-x-8 uppercase text-xs font-semibold tracking-widest text-gray-300">
-                    <a href="#about" class="hover:text-brandYellow transition duration-300">About Us</a>
-                    <a href="#custom-order" class="hover:text-brandYellow transition duration-300">Custom Printing</a>
-                    <a href="#showcase" class="hover:text-brandYellow transition duration-300">Our Work</a>
-                    <a href="#shop" class="hover:text-brandYellow transition duration-300">Shop Store</a>
-                </div>
+      <!-- Desktop Links (Hidden on Mobile) -->
+      <div class="hidden md:flex space-x-8 text-sm font-bold tracking-widest">
+        <a href="#about" class="hover:text-yellow-400 transition">ABOUT US</a>
+        <a href="#custom" class="hover:text-yellow-400 transition">CUSTOM PRINTING</a>
+        <a href="#work" class="hover:text-yellow-400 transition">OUR WORK</a>
+        <a href="#shop" class="hover:text-yellow-400 transition">SHOP STORE</a>
+      </div>
+
+      <!-- Right Side Icons & Mobile Button -->
+      <div class="flex items-center space-x-4">
+        <!-- Cart Icon -->
+        <a href="#cart" class="relative p-2 text-white">
+          <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 3h2l.4 2M7 13h10l4-8H5.4M7 13L5.4 5M7 13l-2.293 2.293c-.63.63-.184 1.707.707 1.707H17m0 0a2 2 0 100 4 2 2 0 000-4zm-8 2a2 2 0 100 4 2 2 0 000-4z"></path>
+          </svg>
+          <span class="absolute top-0 right-0 bg-yellow-400 text-black text-xs font-bold rounded-full h-5 w-5 flex items-center justify-center">0</span>
+        </a>
+
+        <!-- Hamburger Button (Only Visible on Mobile) -->
+        <button id="menu-btn" class="md:hidden text-white focus:outline-none p-2">
+          <svg class="w-7 h-7" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"></path>
+          </svg>
+        </button>
+      </div>
+
+    </div>
+  </div>
+
+  <!-- Mobile Dropdown Menu -->
+  <div id="mobile-menu" class="hidden md:hidden bg-black border-t border-gray-800 px-6 py-4 space-y-3 font-bold tracking-wider">
+    <a href="#about" class="block hover:text-yellow-400 transition">ABOUT US</a>
+    <a href="#custom" class="block hover:text-yellow-400 transition">CUSTOM PRINTING</a>
+    <a href="#work" class="block hover:text-yellow-400 transition">OUR WORK</a>
+    <a href="#shop" class="block hover:text-yellow-400 transition">SHOP STORE</a>
+  </div>
+</nav>
 
                 <!-- Cart Icon -->
                 <button onclick="toggleCart()" class="relative bg-brandBlue/20 border border-brandBlue text-white p-3 rounded-lg hover:bg-brandYellow hover:text-black hover:border-brandYellow transition duration-300">
@@ -408,5 +438,15 @@
         // Initialize Store
         renderProducts();
     </script>
+    <script>
+  const menuBtn = document.getElementById('menu-btn');
+  const mobileMenu = document.getElementById('mobile-menu');
+
+  if (menuBtn && mobileMenu) {
+    menuBtn.addEventListener('click', () => {
+      mobileMenu.classList.toggle('hidden');
+    });
+  }
+</script>
 </body>
 </html>
