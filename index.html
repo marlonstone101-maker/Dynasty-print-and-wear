@@ -3,7 +3,6 @@
 <head>
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Dynasty Print & Wear | Premium Custom Apparel</title>
     <!-- Tailwind CSS CDN -->
     <script src="https://cdn.tailwindcss.com"></script>
@@ -11,22 +10,9 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Cinzel+Decorative:wght@700;900&family=Montserrat:wght@300;400;600;800;900&display=swap" rel="stylesheet">
-    <style>
-  .text-gradient-gold {
-    background: linear-gradient(135deg, #FFE500 0%, #FFF599 50%);
-    -webkit-background-clip: text;
-    -webkit-text-fill-color: transparent;
-  }
-  .glow-blue {
-    box-shadow: 0 0 25px rgba(37, 82, 208, 0.35);
-  }
-  .glow-yellow {
-    box-shadow: 0 0 25px rgba(255, 229, 0, 0.3);
-  }
-  img {
-    mix-blend-mode: screen;
-  }
-</style>
+    <!-- Font Awesome Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    
     <script>
         tailwind.config = {
             theme: {
@@ -45,22 +31,19 @@
             }
         }
     </script>
-    <!-- Font Awesome Icons -->
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    
     <style>
         *, *::before, *::after {
-  box-sizing: border-box;
-}
-
-html, body {
-  max-width: 100%;
-  overflow-x: hidden;
-}
-
-img, svg, video {
-  max-width: 100%;
-  height: auto;
-}
+            box-sizing: border-box;
+        }
+        html, body {
+            max-width: 100%;
+            overflow-x: hidden;
+        }
+        img, svg, video {
+            max-width: 100%;
+            height: auto;
+        }
         .text-gradient-gold {
             background: linear-gradient(135deg, #FFE500 0%, #FFF599 50%, #D4B200 100%);
             -webkit-background-clip: text;
@@ -78,53 +61,53 @@ img, svg, video {
 
     <!-- Navigation -->
     <nav class="sticky top-0 z-50 bg-black/95 backdrop-blur-md border-b border-gray-800">
-  <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-    <div class="flex justify-between items-center h-24">
-      
-      <!-- Logo -->
-      <a href="#" class="flex items-center">
-        <img src="logo.jpg" alt="Dynasty Print and Wear Logo" class="h-12 w-auto">
-      </a>
+      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div class="flex justify-between items-center h-24">
+          
+          <!-- Logo -->
+          <a href="#" class="flex items-center">
+            <img src="logo.jpg" alt="Dynasty Print and Wear Logo" class="h-12 w-auto">
+          </a>
 
-      <!-- Desktop Links (Hidden on Mobile) -->
-      <div class="hidden md:flex space-x-8 text-sm font-bold tracking-widest">
-        <a href="#about" class="hover:text-yellow-400 transition">ABOUT US</a>
-        <a href="#custom" class="hover:text-yellow-400 transition">CUSTOM PRINTING</a>
-        <a href="#work" class="hover:text-yellow-400 transition">OUR WORK</a>
-        <a href="#shop" class="hover:text-yellow-400 transition">SHOP STORE</a>
+          <!-- Desktop Links (Hidden on Mobile) -->
+          <div class="hidden md:flex space-x-8 text-sm font-bold tracking-widest">
+            <a href="#about" class="hover:text-yellow-400 transition">ABOUT US</a>
+            <a href="#custom-order" class="hover:text-yellow-400 transition">CUSTOM PRINTING</a>
+            <a href="#showcase" class="hover:text-yellow-400 transition">OUR WORK</a>
+            <a href="#shop" class="hover:text-yellow-400 transition">SHOP STORE</a>
+          </div>
+
+          <!-- Right Side Icons & Mobile Button -->
+          <div class="flex items-center space-x-4">
+            <!-- Cart Icon -->
+            <button onclick="toggleCart()" class="relative p-2 text-white">
+              <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 3h2l.4 2M7 13h10l4-8H5.4M7 13L5.4 5M7 13L5.4 5M7 13l-2.293 2.293c-.63.63-.184 1.707.707 1.707H17m0 0a2 2 0 100 4 2 2 0 000-4zm-8 2a2 2 0 100 4 2 2 0 000-4z"></path>
+              </svg>
+              <span id="cart-count" class="absolute top-0 right-0 bg-yellow-400 text-black text-xs font-bold rounded-full h-5 w-5 flex items-center justify-center">0</span>
+            </button>
+
+            <!-- Hamburger Button (Only Visible on Mobile) -->
+            <button id="menu-btn" class="md:hidden text-white focus:outline-none p-2">
+              <svg class="w-7 h-7" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"></path>
+              </svg>
+            </button>
+          </div>
+
+        </div>
       </div>
 
-      <!-- Right Side Icons & Mobile Button -->
-      <div class="flex items-center space-x-4">
-        <!-- Cart Icon -->
-        <a href="#cart" class="relative p-2 text-white">
-          <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 3h2l.4 2M7 13h10l4-8H5.4M7 13L5.4 5M7 13l-2.293 2.293c-.63.63-.184 1.707.707 1.707H17m0 0a2 2 0 100 4 2 2 0 000-4zm-8 2a2 2 0 100 4 2 2 0 000-4z"></path>
-          </svg>
-          <span class="absolute top-0 right-0 bg-yellow-400 text-black text-xs font-bold rounded-full h-5 w-5 flex items-center justify-center">0</span>
-        </a>
-
-        <!-- Hamburger Button (Only Visible on Mobile) -->
-        <button id="menu-btn" class="md:hidden text-white focus:outline-none p-2">
-          <svg class="w-7 h-7" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"></path>
-          </svg>
-        </button>
+      <!-- Mobile Dropdown Menu -->
+      <div id="mobile-menu" class="hidden md:hidden bg-black border-t border-gray-800 px-6 py-4 space-y-3 font-bold tracking-wider">
+        <a href="#about" class="block hover:text-yellow-400 transition">ABOUT US</a>
+        <a href="#custom-order" class="block hover:text-yellow-400 transition">CUSTOM PRINTING</a>
+        <a href="#showcase" class="block hover:text-yellow-400 transition">OUR WORK</a>
+        <a href="#shop" class="block hover:text-yellow-400 transition">SHOP STORE</a>
       </div>
+    </nav>
 
-    </div>
-  </div>
-
-  <!-- Mobile Dropdown Menu -->
-  <div id="mobile-menu" class="hidden md:hidden bg-black border-t border-gray-800 px-6 py-4 space-y-3 font-bold tracking-wider">
-    <a href="#about" class="block hover:text-yellow-400 transition">ABOUT US</a>
-    <a href="#custom" class="block hover:text-yellow-400 transition">CUSTOM PRINTING</a>
-    <a href="#work" class="block hover:text-yellow-400 transition">OUR WORK</a>
-    <a href="#shop" class="block hover:text-yellow-400 transition">SHOP STORE</a>
-  </div>
-</nav>
-
- <!-- Hero Section -->
+    <!-- Hero Section -->
     <section class="relative bg-black py-28 px-4 text-center border-b border-brandBlue/20 overflow-hidden">
         <div class="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[500px] h-[500px] bg-brandBlue/20 blur-[120px] rounded-full pointer-events-none"></div>
 
@@ -267,8 +250,8 @@ img, svg, video {
             <!-- Showcase Item 1 -->
             <div class="bg-brandCard rounded-2xl overflow-hidden border border-gray-800 hover:border-brandYellow transition duration-500 group">
                 <div class="h-72 overflow-hidden relative">
-                    <img src="https://images.unsplash.com/photo-1503342217505-b0a15ec3261c?w=600&q=80" alt="High-Density Screen Print" class="w-full h-full object-cover group-hover:scale-110 transition duration-700 ease-out">
-                    <div class="absolute inset-0 bg-black/40 group-hover:bg-black/20 transition"></div>
+                    <img src="https://images.unsplash.com/photo-1503342217505-b0a15ec3261c?w=600&q=80" alt="High-Density Screen Print" class="zoom-image w-full h-full object-cover group-hover:scale-110 transition duration-700 ease-out cursor-pointer">
+                    <div class="absolute inset-0 bg-black/40 group-hover:bg-black/20 transition pointer-events-none"></div>
                 </div>
                 <div class="p-6">
                     <span class="text-brandYellow text-[10px] font-extrabold uppercase tracking-widest block mb-1">Custom Screen Print</span>
@@ -280,8 +263,8 @@ img, svg, video {
             <!-- Showcase Item 2 -->
             <div class="bg-brandCard rounded-2xl overflow-hidden border border-gray-800 hover:border-brandYellow transition duration-500 group">
                 <div class="h-72 overflow-hidden relative">
-                    <img src="https://images.unsplash.com/photo-1556905055-8f358a7a47b2?w=600&q=80" alt="3D Puff Embroidery" class="w-full h-full object-cover group-hover:scale-110 transition duration-700 ease-out">
-                    <div class="absolute inset-0 bg-black/40 group-hover:bg-black/20 transition"></div>
+                    <img src="https://images.unsplash.com/photo-1556905055-8f358a7a47b2?w=600&q=80" alt="3D Puff Embroidery" class="zoom-image w-full h-full object-cover group-hover:scale-110 transition duration-700 ease-out cursor-pointer">
+                    <div class="absolute inset-0 bg-black/40 group-hover:bg-black/20 transition pointer-events-none"></div>
                 </div>
                 <div class="p-6">
                     <span class="text-brandYellow text-[10px] font-extrabold uppercase tracking-widest block mb-1">Embroidery & Patchwork</span>
@@ -293,8 +276,8 @@ img, svg, video {
             <!-- Showcase Item 3 -->
             <div class="bg-brandCard rounded-2xl overflow-hidden border border-gray-800 hover:border-brandYellow transition duration-500 group">
                 <div class="h-72 overflow-hidden relative">
-                    <img src="https://images.unsplash.com/photo-1588850561407-ed78c282e89b?w=600&q=80" alt="Custom Headwear" class="w-full h-full object-cover group-hover:scale-110 transition duration-700 ease-out">
-                    <div class="absolute inset-0 bg-black/40 group-hover:bg-black/20 transition"></div>
+                    <img src="https://images.unsplash.com/photo-1588850561407-ed78c282e89b?w=600&q=80" alt="Custom Headwear" class="zoom-image w-full h-full object-cover group-hover:scale-110 transition duration-700 ease-out cursor-pointer">
+                    <div class="absolute inset-0 bg-black/40 group-hover:bg-black/20 transition pointer-events-none"></div>
                 </div>
                 <div class="p-6">
                     <span class="text-brandYellow text-[10px] font-extrabold uppercase tracking-widest block mb-1">Headwear Line</span>
@@ -344,6 +327,12 @@ img, svg, video {
         </div>
     </div>
 
+    <!-- Image Lightbox Modal -->
+    <div id="image-modal" class="fixed inset-0 bg-black/90 backdrop-blur-md z-[60] hidden flex items-center justify-center p-4">
+        <button id="close-image-modal" class="absolute top-6 right-8 text-white text-4xl hover:text-brandYellow transition">&times;</button>
+        <img id="modal-image" class="max-w-full max-h-[85vh] rounded-lg shadow-2xl border border-gray-800 object-contain" src="" alt="Enlarged View">
+    </div>
+
     <!-- JavaScript Logic -->
     <script>
         // Initial Products
@@ -376,8 +365,8 @@ img, svg, video {
             grid.innerHTML = products.map(product => `
                 <div class="bg-brandCard rounded-2xl overflow-hidden border border-gray-800 hover:border-brandYellow transition duration-500 group flex flex-col justify-between shadow-xl">
                     <div class="h-80 overflow-hidden relative">
-                        <img src="${product.image}" alt="${product.name}" class="w-full h-full object-cover group-hover:scale-110 transition duration-700 ease-out">
-                        <div class="absolute inset-0 bg-gradient-to-t from-brandCard via-transparent to-transparent opacity-80"></div>
+                        <img src="${product.image}" alt="${product.name}" class="zoom-image w-full h-full object-cover group-hover:scale-110 transition duration-700 ease-out cursor-pointer">
+                        <div class="absolute inset-0 bg-gradient-to-t from-brandCard via-transparent to-transparent opacity-80 pointer-events-none"></div>
                     </div>
                     <div class="p-6 flex flex-col flex-grow justify-between">
                         <div>
@@ -385,14 +374,11 @@ img, svg, video {
                             <p class="text-brandYellow font-extrabold text-2xl mb-6">$${product.price.toFixed(2)}</p>
                         </div>
                         
-                        <!-- Separated Action Buttons -->
+                        <!-- Action Buttons -->
                         <div class="flex flex-col gap-2.5">
-                            <!-- Buy Now Button (Adds & Opens Cart Modal Immediately) -->
                             <button onclick="buyNow(${product.id})" class="w-full bg-brandYellow text-black font-extrabold uppercase py-3 rounded-lg hover:bg-white transition duration-300 text-xs tracking-widest shadow-md flex items-center justify-center gap-2">
                                 <i class="fa-solid fa-bolt text-xs"></i> Buy Now
                             </button>
-
-                            <!-- Add To Cart Button (Adds silently in background) -->
                             <button onclick="addToCart(${product.id})" class="w-full bg-black border border-brandBlue text-white font-extrabold uppercase py-3 rounded-lg hover:bg-brandBlue transition duration-300 text-xs tracking-widest flex items-center justify-center gap-2">
                                 <i class="fa-solid fa-cart-shopping text-xs"></i> Add To Cart
                             </button>
@@ -400,9 +386,12 @@ img, svg, video {
                     </div>
                 </div>
             `).join('');
+            
+            // Re-attach zoom listeners to newly generated product images
+            setupImageZoom();
         }
 
-        // Cart & Buy Actions
+        // Cart Actions
         function addToCart(productId) {
             const product = products.find(p => p.id === productId);
             cart.push(product);
@@ -445,24 +434,44 @@ img, svg, video {
             document.getElementById('cart-modal').classList.toggle('hidden');
         }
 
-        function handleCustomOrder(e) {
-            e.preventDefault();
-            alert('Custom print quote submitted successfully! Our team will contact you shortly.');
-            document.getElementById('orderForm').reset();
+        // Image Zoom Modal Setup
+        function setupImageZoom() {
+            const imageModal = document.getElementById('image-modal');
+            const modalImage = document.getElementById('modal-image');
+            const closeBtn = document.getElementById('close-image-modal');
+            const zoomImages = document.querySelectorAll('.zoom-image');
+
+            zoomImages.forEach(img => {
+                img.onclick = () => {
+                    modalImage.src = img.src;
+                    imageModal.classList.remove('hidden');
+                };
+            });
+
+            const closeModal = () => imageModal.classList.add('hidden');
+
+            closeBtn.onclick = closeModal;
+            imageModal.onclick = (e) => {
+                if (e.target === imageModal) closeModal();
+            };
+            document.addEventListener('keydown', (e) => {
+                if (e.key === 'Escape') closeModal();
+            });
         }
 
-        // Initialize Store
-        renderProducts();
-    </script>
-    <script>
-  const menuBtn = document.getElementById('menu-btn');
-  const mobileMenu = document.getElementById('mobile-menu');
+        // Mobile Menu Toggle
+        const menuBtn = document.getElementById('menu-btn');
+        const mobileMenu = document.getElementById('mobile-menu');
 
-  if (menuBtn && mobileMenu) {
-    menuBtn.addEventListener('click', () => {
-      mobileMenu.classList.toggle('hidden');
-    });
-  }
-</script>
+        if (menuBtn && mobileMenu) {
+            menuBtn.addEventListener('click', () => {
+                mobileMenu.classList.toggle('hidden');
+            });
+        }
+
+        // Initialize Store and Lightbox
+        renderProducts();
+        setupImageZoom();
+    </script>
 </body>
 </html>
