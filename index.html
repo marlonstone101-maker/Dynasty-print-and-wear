@@ -1,6 +1,7 @@
 <!DOCTYPE html>
 <html lang="en" class="scroll-smooth">
 <head>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Dynasty Print & Wear | Premium Custom Apparel</title>
@@ -47,6 +48,19 @@
     <!-- Font Awesome Icons -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <style>
+        *, *::before, *::after {
+  box-sizing: border-box;
+}
+
+html, body {
+  max-width: 100%;
+  overflow-x: hidden;
+}
+
+img, svg, video {
+  max-width: 100%;
+  height: auto;
+}
         .text-gradient-gold {
             background: linear-gradient(135deg, #FFE500 0%, #FFF599 50%, #D4B200 100%);
             -webkit-background-clip: text;
@@ -190,41 +204,57 @@
                 <p class="text-gray-400 text-xs sm:text-sm tracking-widest uppercase">Send in your design details to request a custom print quote.</p>
             </div>
 
-           <form action="https://formspree.io/f/maewzvyv" method="POST" enctype="multipart/form-data">
-  
-  <!-- Apparel Type -->
-  <label for="apparel">Apparel Type</label>
-  <select id="apparel" name="apparel_type" required>
-    <option value="T-Shirt">T-Shirt ($15 base)</option>
-    <option value="Hoodie">Hoodie ($35 base)</option>
-    <option value="Sweatshirt">Sweatshirt ($28 base)</option>
-    <option value="Custom Cap">Custom Cap ($12 base)</option>
-  </select>
+            <form action="https://formspree.io/f/maewzvyv" method="POST" enctype="multipart/form-data" class="grid grid-cols-1 md:grid-cols-2 gap-6">
+                
+                <!-- Apparel Type -->
+                <div class="flex flex-col gap-2">
+                    <label for="apparel" class="text-xs font-bold uppercase tracking-wider text-gray-300">Apparel Type</label>
+                    <select id="apparel" name="apparel_type" required class="bg-black border border-gray-800 rounded-lg px-4 py-3 text-white text-sm focus:outline-none focus:border-brandYellow transition">
+                        <option value="T-Shirt">T-Shirt ($15 base)</option>
+                        <option value="Hoodie">Hoodie ($35 base)</option>
+                        <option value="Sweatshirt">Sweatshirt ($28 base)</option>
+                        <option value="Custom Cap">Custom Cap ($12 base)</option>
+                    </select>
+                </div>
 
-  <!-- Quantity -->
-  <label for="quantity">Quantity</label>
-  <input type="number" id="quantity" name="quantity" min="1" value="10" required>
+                <!-- Quantity -->
+                <div class="flex flex-col gap-2">
+                    <label for="quantity" class="text-xs font-bold uppercase tracking-wider text-gray-300">Quantity</label>
+                    <input type="number" id="quantity" name="quantity" min="1" value="10" required class="bg-black border border-gray-800 rounded-lg px-4 py-3 text-white text-sm focus:outline-none focus:border-brandYellow transition">
+                </div>
 
-  <!-- Print Placement -->
-  <label for="placement">Print Placement</label>
-  <select id="placement" name="print_placement" required>
-    <option value="Front Chest Only">Front Chest Only</option>
-    <option value="Back Only">Back Only</option>
-    <option value="Front & Back">Front & Back (+$5/unit)</option>
-  </select>
+                <!-- Print Placement -->
+                <div class="flex flex-col gap-2">
+                    <label for="placement" class="text-xs font-bold uppercase tracking-wider text-gray-300">Print Placement</label>
+                    <select id="placement" name="print_placement" required class="bg-black border border-gray-800 rounded-lg px-4 py-3 text-white text-sm focus:outline-none focus:border-brandYellow transition">
+                        <option value="Front Chest Only">Front Chest Only</option>
+                        <option value="Back Only">Back Only</option>
+                        <option value="Front & Back">Front & Back (+$5/unit)</option>
+                    </select>
+                </div>
 
-  <!-- Logo / Artwork Upload -->
-  <label for="artwork">Upload Logo / Artwork</label>
-  <input type="file" id="artwork" name="artwork_file" accept="image/*">
+                <!-- Contact Email -->
+                <div class="flex flex-col gap-2">
+                    <label for="email" class="text-xs font-bold uppercase tracking-wider text-gray-300">Contact Email</label>
+                    <input type="email" id="email" name="email" placeholder="your@email.com" required class="bg-black border border-gray-800 rounded-lg px-4 py-3 text-white text-sm focus:outline-none focus:border-brandYellow transition">
+                </div>
 
-  <!-- Contact Email -->
-  <label for="email">Contact Email</label>
-  <input type="email" id="email" name="email" placeholder="your@email.com" required>
+                <!-- Logo / Artwork Upload (Full Width) -->
+                <div class="flex flex-col gap-2 md:col-span-2">
+                    <label for="artwork" class="text-xs font-bold uppercase tracking-wider text-gray-300">Upload Logo / Artwork</label>
+                    <input type="file" id="artwork" name="artwork_file" accept="image/*" class="bg-black border border-gray-800 rounded-lg px-4 py-3 text-white text-sm file:mr-4 file:py-2 file:px-4 file:rounded-md file:border-0 file:text-xs file:font-bold file:uppercase file:bg-brandBlue file:text-white hover:file:bg-blue-600 file:cursor-pointer cursor-pointer focus:outline-none focus:border-brandYellow transition">
+                </div>
 
-  <!-- Submit Button -->
-  <button type="submit">SUBMIT PRINT REQUEST</button>
+                <!-- Submit Button (Full Width) -->
+                <div class="md:col-span-2 pt-2">
+                    <button type="submit" class="w-full bg-brandYellow text-black font-extrabold uppercase py-4 rounded-lg hover:bg-white transition duration-300 text-sm tracking-widest glow-yellow cursor-pointer">
+                        Submit Print Request
+                    </button>
+                </div>
 
-</form>
+            </form>
+        </div>
+    </section>
 
     <!-- Company Showcase / Work Gallery Section -->
     <section id="showcase" class="py-24 max-w-7xl mx-auto px-4 border-b border-brandBlue/20">
